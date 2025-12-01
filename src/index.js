@@ -3,6 +3,7 @@ import 'dotenv/config';
 
 // Importa o Express para criar o servidor e rotas
 import express from 'express'; 
+import cors from 'cors';     
 
 // Importa o Mongoose para conectar e manipular o MongoDB
 import mongoose from 'mongoose'; 
@@ -11,6 +12,7 @@ import mongoose from 'mongoose';
 const app = express(); 
 
 // Middleware para interpretar requisições com JSON no corpo
+app.use(cors());  
 app.use(express.json()); 
 
 // Cria um router separado para organizar as rotas da API
